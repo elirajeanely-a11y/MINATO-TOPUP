@@ -1,106 +1,31 @@
-<!DOCTYPE html>
-<html lang="ht">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>MINATO TOPUP</title>
-
-<style>
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#0066ff;
-    color:white;
-    text-align:center;
-}
-
-header{
-    background:#003b8e;
-    padding:25px;
-}
-
-h1{
-    font-size:35px;
-}
-
-.box{
-    background:white;
-    color:#003b8e;
-    margin:20px;
-    padding:20px;
-    border-radius:15px;
-}
-
-button{
-    background:#003b8e;
-    color:white;
-    padding:15px 25px;
-    border:none;
-    border-radius:10px;
-    font-size:18px;
-}
-
-.price{
-    font-size:20px;
-    padding:8px;
-}
-
-footer{
-    background:#003b8e;
-    padding:15px;
-}
-</style>
-
-</head>
-
-<body>
-
-<header>
-<h1>💎 MINATO TOPUP 💎</h1>
-<p>Free Fire Diamonds Rapid & Serye</p>
-</header>
-
-
 <div class="box">
 
-<h2>💎 Pri Diamonds</h2>
+<h2>📸 Prèv Peman</h2>
 
-<p class="price">110 Diamonds = 160 G</p>
-<p class="price">220 Diamonds = 320 G</p>
-<p class="price">341 Diamonds = 500 G</p>
-<p class="price">572 Diamonds = 800 G</p>
+<input type="file" accept="image/*" id="foto">
 
-</div>
+<br><br>
 
-
-<div class="box">
-
-<h2>💳 Peman</h2>
-
-<p>NatCash: 411081873</p>
-<p>MonCash: 49287568</p>
-
-</div>
-
-
-<div class="box">
-
-<h2>📱 Kòmande</h2>
-
-<p>WhatsApp: 43228468</p>
-
-<button onclick="window.location.href='https://wa.me/50943228468'">
-Kòmande Kounye a
+<button onclick="voyeWhatsApp()">
+📲 Voye Prèv Peman
 </button>
 
 </div>
 
+<script>
+function voyeWhatsApp(){
 
-<footer>
-<p>© 2026 MINATO TOPUP</p>
-</footer>
+let foto = document.getElementById("foto").files[0];
 
+if(!foto){
+alert("Tanpri chwazi foto prèv peman an avan.");
+return;
+}
 
-</body>
-</html>
+let mesaj = "Bonjou MINATO TOPUP, mwen fin fè peman. Mwen pral voye foto prèv la.";
+
+window.location.href =
+"https://wa.me/50943228468?text=" + encodeURIComponent(mesaj);
+
+}
+</script>
