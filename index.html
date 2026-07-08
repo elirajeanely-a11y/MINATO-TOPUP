@@ -66,11 +66,16 @@
             transition: all 0.3s ease;
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            -webkit-tap-highlight-color: transparent;
         }
 
         .kat-dyaman:hover {
             border-color: #f9d423;
-            transform: translateY(-5px);
+            transform: translateY(-3px);
+        }
+
+        .kat-dyaman:active {
+            transform: scale(0.95);
         }
 
         .kat-dyaman .kantite {
@@ -87,62 +92,73 @@
             font-weight: bold;
         }
 
-        /* Bouton Aksyon anba a */
-        .btn-achete {
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 30px;
-            margin-top: 35px;
-            cursor: pointer;
-            width: 100%;
-            max-width: 300px;
-            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4);
-            transition: transform 0.2s;
-        }
-
-        .btn-achete:hover {
-            transform: scale(1.05);
+        /* Ti nòt anba grid la */
+        .not-sistèm {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #aaaaaa;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
 
-    <!-- Bannè Tèt Paj la ak non MINATO TOPUP -->
+    <!-- Bannè Tèt Paj la -->
     <header>
         <h1>⚡ MINATO TOPUP ⚡</h1>
-        <p>Achte Dyaman Free Fire Ou Rapid Ak Sekirite Pwopoze</p>
+        <p>Achte Dyaman Free Fire Ou Rapid, Pwòp Ak Sekirite</p>
     </header>
 
     <div class="container">
-        <h2>💎 CHWAZI KANTITE OU VLE A 💎</h2>
+        <h2>💎 KLIKE SOU KANTITE OU VLE A 💎</h2>
         
-        <!-- Grid ak nouvo pri yo -->
+        <!-- Grid ak fonksyon pou voye mesaj WhatsApp lè yo klike -->
         <div class="grid-pri">
-            <div class="kat-dyaman">
+            <div class="kat-dyaman" onclick="voyeKòmand('110', '160G')">
                 <span class="kantite">💎 110 Dyaman</span>
                 <span class="pri">160 G</span>
             </div>
-            <div class="kat-dyaman">
+            
+            <div class="kat-dyaman" onclick="voyeKòmand('310', '500G')">
                 <span class="kantite">💎 310 Dyaman</span>
                 <span class="pri">500 G</span>
             </div>
-            <div class="kat-dyaman">
+            
+            <div class="kat-dyaman" onclick="voyeKòmand('520', '800G')">
                 <span class="kantite">💎 520 Dyaman</span>
                 <span class="pri">800 G</span>
             </div>
-            <div class="kat-dyaman">
+            
+            <div class="kat-dyaman" onclick="voyeKòmand('1060', '1600G')">
                 <span class="kantite">💎 1060 Dyaman</span>
                 <span class="pri">1,600 G</span>
             </div>
         </div>
 
-        <!-- Bouton pou kliyan an klike -->
-        <button class="btn-achete" onclick="window.location.href='#';">Achte Kounye A</button>
+        <p class="not-sistèm">Lè ou klike sou yon pakèt, sa ap mennen ou dirèkteman sou WhatsApp pou finalize kòmand lan.</p>
     </div>
+
+    <!-- Kòd pou jere otomatik mesaj WhatsApp la -->
+    <script>
+        function voyeKòmand(kantite, pri) {
+            // Nimewo WhatsApp ou ak tout kòd peyi a (509)
+            let nimewoTelefon = "50943228468"; 
+            
+            // Tèks mesaj la byen fòmate ak grès (*) ak bèl sote liy
+            let tèksMesaj = "Bonjou *MINATO TOPUP*, mwen vle fè yon kòmand:\n\n" +
+                            "🎮 *Jwèt:* Free Fire\n" +
+                            "🆔 *ID Jwè:* _ \n" +
+                            "💎 *Kantite:* " + kantite + " Dyaman\n" +
+                            "💰 *Pri:* " + pri + "\n\n" +
+                            "Tanpri ban m metòd peman an pou m ka peye rapid!";
+            
+            // Konvèti tèks la pou l ka pase nan yon lyen entènèt (URL Encode)
+            let mesajKode = encodeURIComponent(tèksMesaj);
+            
+            // Louvri WhatsApp dirèkteman
+            window.location.href = "https://wa.me/" + nimewoTelefon + "?text=" + mesajKode;
+        }
+    </script>
 
 </body>
 </html>
