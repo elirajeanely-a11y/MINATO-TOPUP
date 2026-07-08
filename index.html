@@ -1,31 +1,148 @@
-<div class="box">
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINATO TOPUP</title>
+    <style>
+        /* Koulè jeneral ak estil paj la */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121214; /* Fon nwa tankou jwèt */
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
-<h2>📸 Prèv Peman</h2>
+        /* Bannè ki nan tèt la */
+        header {
+            background: linear-gradient(135deg, #ff4e50, #f9d423); /* Bèl koulè fliyoresan */
+            padding: 30px 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 15px rgba(255, 78, 80, 0.3);
+        }
 
-<input type="file" accept="image/*" id="foto">
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
+        }
 
-<br><br>
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
 
-<button onclick="voyeWhatsApp()">
-📲 Voye Prèv Peman
-</button>
+        /* Seksyon pou kat dyaman yo */
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-</div>
+        h2 {
+            margin-top: 25px;
+            color: #f9d423;
+            font-size: 20px;
+        }
 
-<script>
-function voyeWhatsApp(){
+        .grid-pri {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* De kolòn pwòp sou mobil */
+            gap: 15px;
+            margin-top: 15px;
+        }
 
-let foto = document.getElementById("foto").files[0];
+        /* Stil pou chak ti bwat dyaman */
+        .kat-dyaman {
+            background-color: #1a1a1e;
+            border: 2px solid #2a2a30;
+            border-radius: 12px;
+            padding: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
 
-if(!foto){
-alert("Tanpri chwazi foto prèv peman an avan.");
-return;
-}
+        .kat-dyaman:hover {
+            border-color: #f9d423;
+            transform: translateY(-5px);
+        }
 
-let mesaj = "Bonjou MINATO TOPUP, mwen fin fè peman. Mwen pral voye foto prèv la.";
+        .kat-dyaman .kantite {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00e5ff; /* Koulè cyan pou dyaman an */
+            display: block;
+            margin-bottom: 5px;
+        }
 
-window.location.href =
-"https://wa.me/50943228468?text=" + encodeURIComponent(mesaj);
+        .kat-dyaman .pri {
+            font-size: 16px;
+            color: #2ecc71; /* Pri an vèt */
+            font-weight: bold;
+        }
 
-}
-</script>
+        /* Bouton Aksyon anba a */
+        .btn-achete {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            margin-top: 35px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .btn-achete:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bannè Tèt Paj la ak non MINATO TOPUP -->
+    <header>
+        <h1>⚡ MINATO TOPUP ⚡</h1>
+        <p>Achte Dyaman Free Fire Ou Rapid Ak Sekirite Pwopoze</p>
+    </header>
+
+    <div class="container">
+        <h2>💎 CHWAZI KANTITE OU VLE A 💎</h2>
+        
+        <!-- Grid ak nouvo pri yo -->
+        <div class="grid-pri">
+            <div class="kat-dyaman">
+                <span class="kantite">💎 110 Dyaman</span>
+                <span class="pri">160 G</span>
+            </div>
+            <div class="kat-dyaman">
+                <span class="kantite">💎 310 Dyaman</span>
+                <span class="pri">500 G</span>
+            </div>
+            <div class="kat-dyaman">
+                <span class="kantite">💎 520 Dyaman</span>
+                <span class="pri">800 G</span>
+            </div>
+            <div class="kat-dyaman">
+                <span class="kantite">💎 1060 Dyaman</span>
+                <span class="pri">1,600 G</span>
+            </div>
+        </div>
+
+        <!-- Bouton pou kliyan an klike -->
+        <button class="btn-achete" onclick="window.location.href='#';">Achte Kounye A</button>
+    </div>
+
+</body>
+</html>
